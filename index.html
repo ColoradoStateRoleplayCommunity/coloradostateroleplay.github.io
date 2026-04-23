@@ -227,10 +227,10 @@ footer {
 
 <script>
 /* YOUTUBE AUTO */
-const API_KEY = "AIzaSyDq9EEAfAod9ObqYBC2HnvUG1HiCHgqD-I";
+const API_KEY = "AIzaSyASsBEbMxXzeLvfCpPVHz_QJKq-Qz3gSv8";
 const CHANNEL_ID = "UUb48AbRjRQw0dzOqoNZiTSQ";
 
-fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`)
+fetch(`https://www.googleapis.com/youtube/v3/search?key=${AIzaSyASsBEbMxXzeLvfCpPVHz_QJKq-Qz3gSv8}&channelId=${UUb48AbRjRQw0dzOqoNZiTSQ}&part=snippet,id&order=date&maxResults=1`)
 .then(res => res.json())
 .then(data => {
     document.getElementById("youtubeVideo").src =

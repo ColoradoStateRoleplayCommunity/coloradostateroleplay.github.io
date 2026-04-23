@@ -1,165 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Colorado State Roleplay</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0f1a;
-      color: white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colorado State Roleplay</title>
 
-    header {
-      background: #111827;
-      padding: 20px;
-      text-align: center;
-    }
+<style>
+:root {
+    --green: #22c55e;
+    --dark: #020617;
+    --glass: rgba(255,255,255,0.05);
+}
 
-    nav {
-      background: #1f2937;
-      padding: 10px;
-      text-align: center;
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: white;
+}
 
-    nav a {
-      color: #60a5fa;
-      margin: 0 15px;
-      text-decoration: none;
-    }
+/* HERO */
+.hero {
+    background: url('banner.png') center/cover no-repeat;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .hero {
-      padding: 60px;
-      text-align: center;
-      background: linear-gradient(to right, #1e3a8a, #0ea5e9);
-    }
+.hero h1 {
+    background: rgba(0,0,0,0.6);
+    padding: 20px 40px;
+    border-radius: 12px;
+    border: 1px solid var(--green);
+    box-shadow: 0 0 25px var(--green);
+}
 
-    .section {
-      padding: 40px;
-    }
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+    background: #020617;
+}
 
-    .card {
-      background: #1f2937;
-      padding: 20px;
-      margin: 10px;
-      border-radius: 10px;
-      display: inline-block;
-      width: 250px;
-    }
+nav a {
+    color: white;
+    text-decoration: none;
+}
 
-    footer {
-      background: #111827;
-      padding: 20px;
-      text-align: center;
-    }
+nav a:hover {
+    color: var(--green);
+}
 
-    button {
-      background: #0ea5e9;
-      border: none;
-      padding: 10px 20px;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-  </style>
+/* SECTION */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section h2 {
+    color: var(--green);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* GLASS CARD */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--green);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 20px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.apply {
+    background: var(--green);
+    color: black;
+}
+
+.discord {
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* VIDEO */
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+}
+
+/* SERVER */
+.server {
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>Colorado State Roleplay</h1>
-  <p>Professional and Realistic Roleplay Community</p>
-</header>
+<div class="hero">
+<h1>Colorado State Roleplay</h1>
+</div>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#departments">Departments</a>
-  <a href="#join">Join</a>
+<a href="#video">Media</a>
+<a href="#departments">Departments</a>
+<a href="#servers">Servers</a>
+<a href="#join">Join</a>
 </nav>
 
-<div class="hero">
-  <h2>Join the Most Realistic ERLC Experience</h2>
-  <p>DHS • FBI • USM • CDOC • CPR • CSP • Sheriff • Police • F&R • DOT • Civilian Roleplay</p>
-  <button onclick="window.location.href='https://discord.gg/YOURINVITE'">
-    Join Our Discord
-  </button>
-</div>
+<!-- VIDEO -->
+<section id="video" class="section">
+<h2>Latest Video</h2>
+<iframe id="youtubeVideo"></iframe>
+</section>
 
-<div id="about" class="section">
-  <h2>About Us</h2>
-  <p>We are a professional ERLC roleplay community focused on realism, structure, and immersive gameplay.</p>
-</div>
+<!-- DEPARTMENTS -->
+<section id="departments" class="section">
+<h2>Departments</h2>
 
-<div id="departments" class="section">
-  <h2>Departments</h2>
+<div class="grid">
+
+<!-- TEMPLATE START -->
+<div class="card">
+<h3>State Patrol</h3>
+<p>Highway enforcement and traffic operations.</p>
+
+<a class="btn apply" href="APPLICATION_LINK">Apply</a>
+<a class="btn discord" href="DISCORD_LINK">Discord</a>
+</div>
+<!-- TEMPLATE END -->
 
 <div class="card">
-    <h3>Department of Homeland Security</h3>
-    <p>Homeland Security operations and checkpoints.</p>
-  </div>
-  
-  <div class="card">
-    <h3>Federal Bearuea of Invetigations</h3>
-    <p>Federal operations and patrols.</p>
-  </div>
-
-
-  <div class="card">
-    <h3>United States Marshalls</h3>
-    <p>US Marshalls operations and related services.</p>
-  </div>
-  
-  <div class="card">
-    <h3>Colorado Department of Communications</h3>
-    <p>Commands RTO and related services.</p>
-  </div>
-  
-  
-  <div class="card">
-    <h3>Colorado Park Rangers</h3>
-    <p>Colorado Park Rangers operations and patrols maintaining safetty in the wilderness.</p>
-  </div>
-  
-  <div class="card">
-    <h3>Colorado State Patrol</h3>
-    <p>Colorado State law enforcement operations and patrol.</p>
-  </div>
-  
- 
-  <div class="card">
-    <h3>El Paso County Sheriffs Office</h3>
-    <p>County Sheriffs Office operations and patrols around the county.</p>
-  </div>
-  
-  <div class="card">
-    <h3>Colorado Springs Police Department</h3>
-    <p>Local Law enforcement operations and patrol with many divisions.</p>
-  </div>
-  
-  <div class="card">
-    <h3>Colorado Springs Fire & Rescue</h3>
-    <p>Emergency response and rescue operations.</p>
-  </div>
-
-  <div class="card">
-    <h3>Colorado Department Of Transportation</h3>
-    <p>Traffic control and road safety.</p>
-  </div>
-
+<h3>El Paso County Sheriffs Office</h3>
+<p>County law enforcement and patroling.</p>
+<a class="btn apply" href="#">Apply</a>
+<a class="btn discord" href="https://discord.gg/7zPvRK6S4">Discord</a>
 </div>
 
-<div id="join" class="section">
-  <h2>Join Us</h2>
-  <p>Click below to apply and become part of the community.</p>
-  <button onclick="window.location.href='https://discord.gg/f8MDWkt99X'">
-    Apply Now
-  </button>
+<div class="card">
+<h3>Colorado Springs Fire & Rescue</h3>
+<p>Emergency fire and rescue services.</p>
+<a class="btn apply" href="#">Apply</a>
+<a class="btn discord" href="https://discord.gg/9bxdjaZTM">Discord</a>
 </div>
+
+<div class="card">
+<h3>Colorado Department of Communications</h3>
+<p>911 communications and coordination.</p>
+<a class="btn apply" href="#">Apply</a>
+<a class="btn discord" href="#">Discord</a>
+</div>
+
+<div class="card">
+<h3>Civilian Ops</h3>
+<p>Realistic civilian roleplay experience.</p>
+<a class="btn apply" href="#">Apply</a>
+<a class="btn discord" href="#">Discord</a>
+</div>
+
+<!-- ADD YOUR OTHER 10+ DEPARTMENTS SAME FORMAT -->
+
+</div>
+</section>
+
+<!-- SERVERS -->
+<section id="servers" class="section">
+<h2>Server Status</h2>
+
+<div class="card server">
+<h3>Main Server</h3>
+<p>Status: <span id="status1">Loading...</span></p>
+<p>Players: <span id="players1">--</span></p>
+<a class="btn apply" href="#">Join Server</a>
+</div>
+
+</section>
+
+<!-- JOIN -->
+<section id="join" class="section">
+<h2>Join the Community</h2>
+<a class="btn apply" href="https://discord.gg/sRWA2Qdm2k">Join Discord</a>
+</section>
 
 <footer>
-  <p>© 2026 Colorado State Roleplay</p>
+<p>© 2026 Colorado State Roleplay</p>
 </footer>
+
+<script>
+/* YOUTUBE AUTO */
+const API_KEY = "YOUR_API_KEY";
+const CHANNEL_ID = "YOUR_CHANNEL_ID";
+
+fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`)
+.then(res => res.json())
+.then(data => {
+    document.getElementById("youtubeVideo").src =
+    "https://www.youtube.com/embed/" + data.items[0].id.videoId;
+});
+
+/* SERVER STATUS */
+function updateServer() {
+    document.getElementById("status1").innerText = "🟢 Online";
+    document.getElementById("players1").innerText = "42 / 100";
+}
+updateServer();
+</script>
 
 </body>
 </html>
